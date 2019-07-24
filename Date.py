@@ -42,7 +42,7 @@ def ScrapeAMC():
     url = 'https://www.amctheatres.com/movies'
     AMC_r = requests.get(url)
     AMC_soup = BeautifulSoup(AMC_r.text, 'html.parser')
-    movies = AMC_soup.findAll('div',{'class':'MoviePostersGrid-text'})
+    movies = AMC_soup.findAll('div',{'class':'PosterContent'})
     movie_list = []
     # Find name of each movie from within each grid
     for movie in movies:
